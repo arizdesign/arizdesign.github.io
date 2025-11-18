@@ -1,0 +1,79 @@
+html { scroll-behavior: smooth; }
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; outline: 0; vertical-align: center; }
+h1, h2, h3, h4, h5, h6 { font-weight: inherit; }
+
+body { font-size: 13px; font-family: Arial, sans-serif; color: black; background-color: white; padding: 0; margin: 0; }
+
+main, header, div, nav, section, article, p { margin: 0 auto; }
+a { -webkit-tap-highlight-color: transparent; outline: none; -webkit-tap-highlight-color: rgba(0,0,0,0); }
+a, a:link { color: inherit; text-decoration: none; }
+img { align: center; margin: 0 auto; display: block; height: auto; max-width: 100%; }
+
+div {	
+-webkit-transition-duration: 0.1s;
+-moz-transition-duration: 0.1s;
+transition-duration: 0.1s;
+
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+}
+
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before q: after{ content: ''; content: none; }
+:focus { outline: 0; }
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+tables { border-colapse: collapse; border-space: 0; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nave, section { display: block; }
+nave ul { list-style: none; }
+mark { background-color: #ffff99; color: #000000; font-style: italic; font-weight: bold; }
+input, selecet { vertical-align: middle; outline: 0; }
+label, input[type=button], input[type=submit], button { cursor: pointer; }
+
+/* RESETS */
+@media only screen and (max-width: 480px) {
+.w100m { width: 100% !important; }
+.w95m { width: 95% !important; }	
+.w90m { width: 90% !important; }
+.w85m { width: 85% !important; }	
+.w80m { width: 80% !important; }
+.expandm { width: 100% !important; display: block !important; }
+.hidem { display: none !important; }
+.showm { display: block !important; }
+.tcenterm { text-align: center !important;  }
+.tleftm { text-align: left !important;  }
+.trightm { text-align: right !important;  }	
+
+.pad0m { padding: 0px !important; }
+.padl1m { padding-left: 1px !important; }
+.padr1m { padding-right: 1px !important; }	
+	
+.margt0m { margin-top: 0px !important; }
+.margt50m { margin-top: 50px !important; }
+.margt100m { margin-top: 100px !important; }	
+	
+.padt0m { padding-top: 0px !important; }
+.padt1m { padding-top: 1px !important; }
+.padt2m { padding-top: 2px !important; }	
+.padt5m { padding-top: 5px !important; }
+.padt10m { padding-top: 10px !important; }
+.padt20m { padding-top: 20px !important; }
+.padt30m { padding-top: 30px !important; }
+.padt40m { padding-top: 40px !important; }
+.padt50m { padding-top: 50px !important; }
+.padt100m { padding-top: 100px !important; }
+	
+.margb0m { margin-bottom: 0px !important; }	
+
+.padb0m { padding-bottom: 0px !important; }
+.padb5m { padding-bottom: 5px !important; }
+.padb10m { padding-bottom: 10px !important; }
+.padb20m { padding-bottom: 20px !important; }
+.padb30m { padding-bottom: 30px !important; }
+.padb40m { padding-bottom: 40px !important; }
+.padb50m { padding-bottom: 50px !important; }
+.padb100m { padding-bottom: 100px !important; }	
+}
