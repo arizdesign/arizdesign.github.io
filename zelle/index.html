@@ -4,25 +4,38 @@
 <meta property="og:title" content="Zelle: @arizdesign - Emmanuel Arizmendi" />
 <meta data-react-helmet="true" property="og:image" content="https://www.zelle.com/sites/default/files/2024-11/share-zelle.jpg">
 <link rel="icon" href="https://www.zelle.com/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="arizdesign_reset.css">
 <title>Zelle: @arizdesign - Emmanuel Arizmendi</title>
 
 
 <style>
 body { align: center; text-align: center; background-color: #5b18b2; color: white; }
+
+footer {  width: 100%; position: fixed; top: 20px; }
 h1 { font-size: 15px; } 
-.qr { width: 100px; } 
-.zelle { width: 100px; font-size: 13px; }
+
+main {  display: flex; align-items: center; justify-content: center; height: 100vh; }
+main img { width: 100px; } 
+
+footer {  width: 100%; position: fixed; bottom: 20px; }
+footer img { width: 100px; font-size: 13px; }
 </style>
   
 </head>
 
 <body>
 
+<header>
 <h1>Emmanuel Arizmendi</h1>
+</header>
 
-<img class="qr" src="arizdesign_zelle_qr.png">
+<main>
+<img src="arizdesign_zelle_qr.png">
+</main>
 
-<img class="zelle" alt="Zelle" src="https://www.zelle.com/themes/custom/zelle/images/zelle-logo-white.png">
+<footer>
+<img alt="Zelle" src="https://www.zelle.com/themes/custom/zelle/images/zelle-logo-white.png">
+</footer>
   
 </body>
 </html>
