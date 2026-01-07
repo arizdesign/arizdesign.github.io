@@ -1,44 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Contact Form</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Form styling -->
+    <link rel="stylesheet" href="formcarry-form.css" />
   </head>
   <body>
-    <div class="center">
-      <h1>Contact</h1>
-      <form action="https://formsubmit.co/toelectronicmail@gmail.com" method="POST">
+    <div class="formcarry-container">
+      <form action="form-process.php" method="POST" class="formcarry-form">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="fullName" required />
 
-        <div class="txt_field">
-          <input type="text" name="name" id="name" required>
-          <span></span>
-          <label>Full Name</label>
-        </div>
+        <label for="email">Your Email Address</label>
+        <input type="email" id="email" name="email" required />
 
-        <div class="txt_field">
-            <input type="text" name="email" id="email" required>
-            <span></span>
-            <label>Email</label>
-        </div>
+        <label for="message">Your Message</label>
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
 
-        <div class="txt_field">
-          <input type="text" name="message" id="message" required>
-          <span></span>
-          <label>Message</label>
-        </div>
-
-        <div class="pass">
-            <input class="pass" type="reset" value="Reset">
-        </div>
-
-        <input type="submit" value="Submit">
-        <input type="hidden" name="_template" value="table">
-
-        <div class="homePage_link">
-        <a href="#">Back to Home page</a>
-        </div>
-
+        <button type="submit">Send</button>
       </form>
     </div>
   </body>
