@@ -71,8 +71,11 @@ h1 a:hover { text-decoration: underline none; }
 <div class="bg" id="bg"></div>
 
 <script>
-document.getElementById('bg').style.backgroundImage =
-  "url('images/arizdesign_bg-a.gif?v=" + Date.now() + "')";
+const v = Date.now();
+document.getElementById('bg').style.backgroundImage = `
+  url('images/arizdesign_bg-low.gif?v=${v}'),
+  url('images/arizdesign_bg.gif?v=${v}')
+`;
 </script>
 
 <main>
