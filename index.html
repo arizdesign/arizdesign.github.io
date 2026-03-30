@@ -71,8 +71,20 @@ h1 a:hover { text-decoration: underline none; }
 <div class="bg" id="bg"></div>
 
 <script>
+const bg = document.getElementById('bg');
 const v = Date.now();
-document.getElementById('bg').style.backgroundImage = `url('images/arizdesign_bg.gif?v=${v}'), url('images/arizdesign_bg-low.gif?v=${v}');
+
+// Step 1: set low-res instantly
+bg.style.backgroundImage = `url('images/arizdesign_bg-low.gif?v=${v}')`;
+
+// Step 2: preload high-res
+const img = new Image();
+img.src = `images/arizdesign_bg.gif?v=${v}`;
+
+// Step 3: swap when loaded
+img.onload = () => {
+  bg.style.backgroundImage = `url('${img.src}')`;
+};
 </script>
 
 <main>
