@@ -1,0 +1,97 @@
+name: Generate Portfolio Projects
+
+on:
+  push:
+    paths:
+      - "work/**"
+      - ".github/workflows/generate-projects.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  generate-projects:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate projects.json
+        run: |
+
+          python <<'PY'
+
+          import os
+          import json
+
+          work_dir = "work"
+
+          projects = []
+
+          for folder in sorted(os.listdir(work_dir)):
+
+              folder_path = os.path.join(
+                  work_dir,
+                  folder
+              )
+
+              if not os.path.isdir(folder_path):
+                  continue
+
+              if folder.startswith("."):
+                  continue
+
+              parts = folder.split("_", 1)
+
+              project_name = parts[0]
+
+              category = ""
+
+              if len(parts) > 1:
+                  category = parts[1]
+
+              title = project_name.replace("-", " ")
+
+              category = category.replace("-", " ")
+
+              title = title.title()
+
+              category = category.title()
+
+              projects.append({
+                  "title": title,
+                  "category": category,
+                  "url": f"/work/{folder}/",
+                  "cover": f"/work/{folder}/cover.jpg"
+              })
+
+          with open(
+              "work/projects.json",
+              "w",
+              encoding="utf-8"
+          ) as file:
+
+              json.dump(
+                  projects,
+                  file,
+                  indent=4
+              )
+
+          PY
+
+      - name: Commit projects.json
+        run: |
+
+          git config user.name "github-actions"
+
+          git config user.email "github-actions@github.com"
+
+          git add work/projects.json
+
+          git diff --cached --quiet || \
+          git commit -m "Update portfolio projects"
+
+          git push
