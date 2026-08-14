@@ -1,1 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Work — Ariz Design</title>
+
+    <meta
+        name="description"
+        content="Selected work by Ariz Design."
+    >
+
+    <style>
+
+        /* ================================
+           RESET
+        ================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #111111;
+        }
+
+
+        /* ================================
+           PAGE
+        ================================= */
+
+        .work-page {
+            width: 100%;
+            padding: 40px;
+        }
+
+
+        /* ================================
+           HEADER
+        ================================= */
+
+        .work-header {
+            margin-bottom: 50px;
+        }
+
+        .work-header h1 {
+            margin: 0;
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 1;
+        }
+
+
+        /* ================================
+           GRID
+        ================================= */
+
+        .work-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 40px 20px;
+
+            width: 100%;
+        }
+
+
+        /* ================================
+           PROJECT CARD
+        ================================= */
+
+        .work-item {
+
+            display: block;
+
+            color: inherit;
+
+            text-decoration: none;
+
+            min-width: 0;
+        }
+
+
+        /* ================================
+           PROJECT IMAGE
+        ================================= */
+
+        .work-image-wrapper {
+
+            position: relative;
+
+            width: 100%;
+
+            aspect-ratio: 4 / 3;
+
+            overflow: hidden;
+
+            background: #eeeeee;
+        }
+
+        .work-image {
+
+            display: block;
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.4s ease;
+        }
+
+
+        /* ================================
+           HOVER
+        ================================= */
+
+        .work-item:hover .work-image {
+
+            transform: scale(1.03);
+        }
+
+
+        /* ================================
+           PROJECT INFORMATION
+        ================================= */
+
+        .work-info {
+
+            padding-top: 12px;
+        }
+
+        .work-title {
+
+            margin: 0;
+
+            font-size: 18px;
+
+            font-weight: 500;
+
+            line-height: 1.2;
+        }
+
+        .work-category {
+
+            margin: 5px 0 0;
+
+            font-size: 14px;
+
+            line-height: 1.3;
+
+            opacity: 0.55;
+        }
+
+
+        /* ================================
+           LOADING
+        ================================= */
+
+        .loading {
+
+            font-size: 16px;
+
+            opacity: 0.5;
+        }
+
+
+        /* ================================
+           ERROR
+        ================================= */
+
+        .error {
+
+            font-size: 16px;
+
+            line-height: 1.5;
+
+            max-width: 500px;
+        }
+
+
+        /* ================================
+           TABLET
+        ================================= */
+
+        @media (max-width: 900px) {
+
+            .work-page {
+
+                padding: 30px;
+            }
+
+            .work-grid {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+                gap: 30px 15px;
+            }
+
+            .work-header h1 {
+
+                font-size: 40px;
+            }
+
+        }
+
+
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 600px) {
+
+            .work-page {
+
+                padding: 20px;
+            }
+
+            .work-header {
+
+                margin-bottom: 30px;
+            }
+
+            .work-header h1 {
+
+                font-size: 36px;
+            }
+
+            .work-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <main class="work-page">
+
+
+        <!-- ============================
+             HEADER
+        ============================= -->
+
+        <header class="work-header">
+
+            <h1>Work</h1>
+
+        </header>
+
+
+        <!-- ============================
+             PROJECT GRID
+        ============================= -->
+
+        <section
+            id="work-grid"
+            class="work-grid"
+        >
+
+            <p class="loading">
+                Loading work…
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <script>
+
+
+        /* ==================================================
+           GITHUB SETTINGS
+        ================================================== */
+
+        const GITHUB_USERNAME =
+            "YOUR-GITHUB-USERNAME";
+
+        const REPOSITORY =
+            "YOUR-REPOSITORY-NAME";
+
+
+        /* ==================================================
+           WORK FOLDER
+        ================================================== */
+
+        const WORK_FOLDER =
+            "work";
+
+
+        /* ==================================================
+           GITHUB API URL
+        ================================================== */
+
+        const API_URL =
+            `https://api.github.com/repos/${GITHUB_USERNAME}/${REPOSITORY}/contents/${WORK_FOLDER}`;
+
+
+        /* ==================================================
+           LOAD PROJECTS
+        ================================================== */
+
+        async function loadProjects() {
+
+            const grid =
+                document.getElementById("work-grid");
+
+
+            try {
+
+                const response =
+                    await fetch(API_URL);
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        `GitHub API returned ${response.status}`
+                    );
+
+                }
+
+
+                const items =
+                    await response.json();
+
+
+                /*
+                 * Only use folders.
+                 *
+                 * GitHub identifies folders as:
+                 *
+                 * type === "dir"
+                 */
+
+                const projects =
+                    items.filter(
+                        item => item.type === "dir"
+                    );
+
+
+                /*
+                 * Sort alphabetically.
+                 */
+
+                projects.sort(
+                    (a, b) =>
+                        a.name.localeCompare(b.name)
+                );
+
+
+                /*
+                 * Remove loading message.
+                 */
+
+                grid.innerHTML = "";
+
+
+                /*
+                 * If there are no projects.
+                 */
+
+                if (projects.length === 0) {
+
+                    grid.innerHTML =
+                        "<p>No projects found.</p>";
+
+                    return;
+
+                }
+
+
+                /*
+                 * Create each project card.
+                 */
+
+                projects.forEach(
+                    project => {
+
+                        createProjectCard(
+                            project,
+                            grid
+                        );
+
+                    }
+                );
+
+
+            } catch (error) {
+
+                console.error(error);
+
+
+                grid.innerHTML = `
+                    <p class="error">
+                        Unable to load projects.
+                    </p>
+                `;
+
+            }
+
+        }
+
+
+        /* ==================================================
+           CREATE PROJECT CARD
+        ================================================== */
+
+        function createProjectCard(
+            project,
+            grid
+        ) {
+
+
+            /*
+             * Example folder:
+             *
+             * happy-valley-or_branding
+             *
+             * Split into:
+             *
+             * happy-valley-or
+             * branding
+             */
+
+            const parts =
+                project.name.split("_");
+
+
+            const projectName =
+                parts[0];
+
+
+            const category =
+                parts.slice(1).join(" ");
+
+
+            /*
+             * Convert folder name
+             * into readable title.
+             */
+
+            const title =
+                formatTitle(projectName);
+
+
+            const categoryTitle =
+                formatTitle(category);
+
+
+            /*
+             * Project URL
+             */
+
+            const projectURL =
+                `/work/${project.name}/`;
+
+
+            /*
+             * Cover image.
+             *
+             * Every project should contain:
+             *
+             * cover.jpg
+             */
+
+            const imageURL =
+                `/work/${project.name}/cover.jpg`;
+
+
+            /* ================================
+               CARD
+            ================================= */
+
+            const link =
+                document.createElement("a");
+
+
+            link.className =
+                "work-item";
+
+
+            link.href =
+                projectURL;
+
+
+            /* ================================
+               IMAGE
+            ================================= */
+
+            const imageWrapper =
+                document.createElement("div");
+
+
+            imageWrapper.className =
+                "work-image-wrapper";
+
+
+            const image =
+                document.createElement("img");
+
+
+            image.className =
+                "work-image";
+
+
+            image.src =
+                imageURL;
+
+
+            image.alt =
+                title;
+
+
+            /*
+             * Lazy-load images.
+             */
+
+            image.loading =
+                "lazy";
+
+
+            /*
+             * Prevent broken images
+             * from looking ugly.
+             */
+
+            image.onerror =
+                function () {
+
+                    this.style.display =
+                        "none";
+
+                };
+
+
+            imageWrapper.appendChild(
+                image
+            );
+
+
+            /* ================================
+               INFORMATION
+            ================================= */
+
+            const info =
+                document.createElement("div");
+
+
+            info.className =
+                "work-info";
+
+
+            const titleElement =
+                document.createElement("h2");
+
+
+            titleElement.className =
+                "work-title";
+
+
+            titleElement.textContent =
+                title;
+
+
+            info.appendChild(
+                titleElement
+            );
+
+
+            /*
+             * Only show category if
+             * one exists.
+             */
+
+            if (category) {
+
+                const categoryElement =
+                    document.createElement("p");
+
+
+                categoryElement.className =
+                    "work-category";
+
+
+                categoryElement.textContent =
+                    categoryTitle;
+
+
+                info.appendChild(
+                    categoryElement
+                );
+
+            }
+
+
+            /* ================================
+               ASSEMBLE
+            ================================= */
+
+            link.appendChild(
+                imageWrapper
+            );
+
+
+            link.appendChild(
+                info
+            );
+
+
+            grid.appendChild(
+                link
+            );
+
+        }
+
+
+        /* ==================================================
+           FORMAT TITLE
+        ================================================== */
+
+        function formatTitle(
+            text
+        ) {
+
+            if (!text) {
+
+                return "";
+
+            }
+
+
+            return text
+
+                /*
+                 * Replace hyphens with spaces.
+                 */
+
+                .replace(
+                    /-/g,
+                    " "
+                )
+
+                /*
+                 * Capitalize each word.
+                 */
+
+                .replace(
+                    /\b\w/g,
+                    letter =>
+                        letter.toUpperCase()
+                );
+
+        }
+
+
+        /* ==================================================
+           START
+        ================================================== */
+
+        loadProjects();
+
+
+    </script>
+
+
+</body>
+
+</html>
