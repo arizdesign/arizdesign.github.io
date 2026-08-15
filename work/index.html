@@ -25,22 +25,14 @@
 
 <title>Emmanuel Arizmendi - Interactive Designer</title>
 
-    <style>
+<style>
 
-        * {
-            box-sizing: border-box;
-        }
+body { }
+main { } 
 
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #ffffff;
-            color: #111111;
-        }
+.work-grid { display: inline-block; width: 30%; vertical-align: top; }
 
-        .work-page {
-            padding: 40px;
-        }
+       
 
         .work-header {
             margin-bottom: 50px;
@@ -52,11 +44,7 @@
             font-weight: 500;
         }
 
-        .work-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px 20px;
-        }
+        
 
         .work-item {
             display: block;
@@ -113,9 +101,7 @@
                 padding: 30px;
             }
 
-            .work-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            
 
         }
 
@@ -125,9 +111,7 @@
                 padding: 20px;
             }
 
-            .work-grid {
-                grid-template-columns: 1fr;
-            }
+            
 
             .work-header h1 {
                 font-size: 36px;
@@ -142,27 +126,15 @@
 
 <body>
 
-    <main class="work-page">
+<main>
 
-        <header class="work-header">
+<h1>Work</h1>
 
-            <h1>Work</h1>
+<section id="work-grid" class="work-grid">
+    <p class="loading">Loading work...</p>
+</section>
 
-        </header>
-
-
-        <section
-            id="work-grid"
-            class="work-grid"
-        >
-
-            <p class="loading">
-                Loading work...
-            </p>
-
-        </section>
-
-    </main>
+</main>
 
 
     <script>
