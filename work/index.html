@@ -36,7 +36,7 @@ h1 {  }
 .work-item {  }
 .work-item:hover .work-title { color: dodgerblue; }
 
-.work-info { padding-top: 100px; text-align: left; font-size: 5vw !important; }
+.work-info { margin-top: 100px; text-align: left; font-size: 5vw !important; }
 .work-title {  }
 .work-category {  }
 	
@@ -62,6 +62,8 @@ h1 {  }
 <section id="work-grid" class="work-grid">
     <p class="loading">Loading work...</p>
 </section>
+
+<a class="work-info" href="">Linkedin</a>
 
 </main>
 
@@ -155,18 +157,7 @@ h1 {  }
                 project.url;
 
 
-             /*
-            Information
-            */
-
-            const info =
-                document.createElement("div");
-
-            info.className =
-                "work-info";
-
-
-            /*
+              /*
             Title
             */
 
@@ -204,10 +195,6 @@ h1 {  }
 
             info.appendChild(
                 category
-            );
-
-            link.appendChild(
-                info
             );
 
             grid.appendChild(
