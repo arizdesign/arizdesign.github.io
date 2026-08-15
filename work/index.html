@@ -33,19 +33,22 @@ main { max-width: 1024px; padding: 0px 5%; }
 h1 {  }
 
 .work-grid {  }
-.work-item { display: inline-block; vertical-align: top; width: 29%; margin: 50px 2% 0px 2%; }
-.work-item .work-title:hover { color: dodgerblue; }
+.work-item { margin-top: 30px; }
+.work-item:hover .work-title { color: dodgerblue; }
+
+.work-info { padding-top: 15px; text-align: left; font-size: 5vw; }
+.work-title { font-weight: bold; }
+.work-category {  }
+
 .work-image-wrapper { width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: whitesmoke; }
 .work-image { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
-.work-info { padding-top: 15px; text-align: center; }
-.work-title { font-size: 16px; }
-.work-category { padding-top: 5px; font-size: 13px; color: gray; }
 	
 .loading { opacity: 0.5; }
 .error { color: #b00020; }
 
+	
 @media only screen and (max-width: 480px) {
-.work-item { width: 40%; }
+
 }
 
 </style>
