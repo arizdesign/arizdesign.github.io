@@ -157,7 +157,18 @@ h1 {  }
                 project.url;
 
 
-              /*
+             /*
+            Information
+            */
+
+            const info =
+                document.createElement("div");
+
+            info.className =
+                "work-info";
+
+
+            /*
             Title
             */
 
@@ -195,6 +206,10 @@ h1 {  }
 
             info.appendChild(
                 category
+            );
+
+            link.appendChild(
+                info
             );
 
             grid.appendChild(
