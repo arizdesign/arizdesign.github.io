@@ -28,7 +28,7 @@
 <style>
 
 body { margin: 100px 0; }
-main { max-width: 1024px; padding: 0px 5%; }
+main { width: 95% }
 
 h1 {  }
 
@@ -158,40 +158,7 @@ h1 {  }
                 project.url;
 
 
-            /*
-            Image wrapper
-            */
-
-            const imageWrapper =
-                document.createElement("div");
-
-            imageWrapper.className =
-                "work-image-wrapper";
-
-
-            /*
-            Image
-            */
-
-            const image =
-                document.createElement("img");
-
-            image.className =
-                "work-image";
-
-            image.src =
-                project.cover;
-
-            image.loading =
-                "lazy";
-
-
-            imageWrapper.appendChild(
-                image
-            );
-
-
-            /*
+             /*
             Information
             */
 
