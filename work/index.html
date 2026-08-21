@@ -32,23 +32,14 @@ main { width: 95% }
 
 h1 { font-size: 16px; margin-top: 100px; margin-bottom: 50px; letter-spacing: .5px; }
 
-.work-grid {  }
-.work-item {  }
-.work-item:hover .work-title, .work-item:hover .work-category { color: dodgerblue; }
-
-.work-info { border-top: 1px solid rgba(0,0,0,0.6); padding: 70px 0px; text-align: left; font-size: 5vw !important; }
-.work-title { font-weight: bold; }
-.work-category {  }
-
-footer { font-size: 16px; color: dodgerblue; padding: 30px 0px; border-top: 1px solid rgba(0,0,0,0.6); }
-	
-.loading { opacity: 0.5; font-size: 13px; }
-.error { color: red; }
+.project { display: table-cell; width: 33%; border-top: 1px solid rgba(0,0,0,0.6); padding: 70px 0px; text-align: left; font-size: 30px; }
+.project { color: dodgerblue; }
+.project span { font-weight: bold; }
 	
 
 	
 @media only screen and (max-width: 480px) {
-.work-info { padding: 40px 0px; }
+
 }
 
 </style>
@@ -58,13 +49,40 @@ footer { font-size: 16px; color: dodgerblue; padding: 30px 0px; border-top: 1px 
 
 <body>
 
-<main>
-
 <h1><a href="https://www.linkedin.com/in/arizdesign?trk=public_post_follow-view-profile"><b>Emmanuel Arizmendi</b> <br>Interactive Designer</a></h1>
 
-<section id="work-grid" class="work-grid">
-    <p class="loading">Loading...</p> 
-</section>
+
+<nav class="filters">
+
+    <a href="#" class="filter active" data-filter="all">
+        All
+    </a>
+
+    <a href="#" class="filter" data-filter="brand">
+        Brand
+    </a>
+
+    <a href="#" class="filter" data-filter="email">
+        Email
+    </a>
+
+    <a href="#" class="filter" data-filter="illustration">
+        Illustration
+    </a>
+
+    <a href="#" class="filter" data-filter="print">
+        Print
+    </a>
+
+</nav>
+
+<main>
+	
+<a class="project design" href="https://www.linkedin.com/posts/arizdesign_arizdesign-activity-7494993161409155073-h3eg?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section>Athletes for Cancer <span>Poster</span></section></a>
+
+<a class="project design" href="https://www.linkedin.com/posts/arizdesign_arizdesign-activity-7494993161409155073-h3eg?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section>Athletes for Cancer <span>Poster</span></section></a>
+
+<a class="project design" href="https://www.linkedin.com/posts/arizdesign_arizdesign-activity-7494993161409155073-h3eg?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section>Athletes for Cancer <span>Poster</span></section></a>
 
 <section id="work-grid" class="work-grid">
 	<a class="work-item" href="https://www.linkedin.com/in/arizdesign?trk=public_post_follow-view-profile"><div class="work-info"><h2 class="work-title">&ndash;LinkedIn</h2></div></a>
@@ -75,163 +93,29 @@ footer { font-size: 16px; color: dodgerblue; padding: 30px 0px; border-top: 1px 
 
 
     <script>
+$(".filter").on("click", function(e) {
 
-        /*
-        ==========================================
-        LOAD PROJECTS
-        ==========================================
-        */
+    e.preventDefault();
 
-        async function loadProjects() {
+    var filter = $(this).data("filter");
 
-            const grid =
-                document.getElementById("work-grid");
+    $(".filter").removeClass("active");
 
+    $(this).addClass("active");
 
-            try {
+    if (filter === "all") {
 
-                const response =
-                    await fetch("projects.json");
+        $(".project").show();
 
+    } else {
 
-                if (!response.ok) {
+        $(".project").hide();
 
-                    throw new Error(
-                        "Could not load projects.json"
-                    );
+        $(".project." + filter).show();
 
-                }
+    }
 
-
-                const projects =
-                    await response.json();
-
-
-                grid.innerHTML = "";
-
-
-                projects.forEach(
-                    project => {
-
-                        createProjectCard(
-                            project,
-                            grid
-                        );
-
-                    }
-                );
-
-
-            } catch (error) {
-
-                console.error(error);
-
-
-                grid.innerHTML = `
-                    <p class="error">
-                        Unable to load projects.
-                    </p>
-                `;
-
-            }
-
-        }
-
-
-        /*
-        ==========================================
-        CREATE PROJECT CARD
-        ==========================================
-        */
-
-        function createProjectCard(
-            project,
-            grid
-        ) {
-
-            /*
-            Card link
-            */
-
-            const link =
-                document.createElement("a");
-
-            link.className =
-                "work-item";
-
-            link.href =
-                project.url;
-
-
-             /*
-            Information
-            */
-
-            const info =
-                document.createElement("div");
-
-            info.className =
-                "work-info";
-
-
-            /*
-            Title
-            */
-
-            const title =
-                document.createElement("h2");
-
-            title.className =
-                "work-title";
-
-            title.textContent =
-                project.title;
-
-
-            /*
-            Category
-            */
-
-            const category =
-                document.createElement("h2");
-
-            category.className =
-                "work-category";
-
-            category.textContent =
-                project.category;
-
-
-            /*
-            Assemble card
-            */
-
-            info.appendChild(
-                title
-            );
-
-            info.appendChild(
-                category
-            );
-
-            link.appendChild(
-                info
-            );
-
-            grid.appendChild(
-                link
-            );
-
-        }
-
-
-        /*
-        ==========================================
-        START
-        ==========================================
-        */
-
-        loadProjects();
+});
 
     </script>
 
