@@ -28,21 +28,21 @@
 <style>
 
 body { background-color: #1a1c20; color: white; margin-bottom: 100px; font-family: Georgia, serif; }
-main { width: 95%; }
+main { width: 95%; display: grid; grid-template-columns: repeat(3, 1fr); }
 
 h1 { width: 95%; font-size: 16px; margin-top: 100px; margin-bottom: 50px; letter-spacing: .5px; }
 
 nav { with: 95%; }
 nav a { background-color: white; color: black; display: inline-block; padding: 5px; }
 
-.project { float: left; width: 33.2%; padding: 50px 10px; text-align: left; font-size: 30px; }
+.project { display: block; width: auto; padding: 50px 10px; text-align: left; font-size: 30px; }
 .project { color: dodgerblue; }
 .project h2 { font-weight: bold; }
 	
 
 	
 @media only screen and (max-width: 480px) {
-.project { width: 50%; }
+main { grid-template-columns: repeat(2, 1fr); }
 }
 
 	
