@@ -95,27 +95,31 @@ h1 { font-size: 16px; margin-top: 100px; margin-bottom: 50px; letter-spacing: .5
 
 
     <script>
-$(".filter").on("click", function(e) {
+$(document).ready(function() {
 
-    e.preventDefault();
+    $(".filter").on("click", function(e) {
 
-    var filter = $(this).data("filter");
+        e.preventDefault();
 
-    $(".filter").removeClass("active");
+        var filter = $(this).data("filter");
 
-    $(this).addClass("active");
+        $(".filter").removeClass("active");
 
-    if (filter === "all") {
+        $(this).addClass("active");
 
-        $(".project").show();
+        if (filter === "all") {
 
-    } else {
+            $(".project").show();
 
-        $(".project").hide();
+        } else {
 
-        $(".project." + filter).show();
+            $(".project").hide();
 
-    }
+            $(".project." + filter).show();
+
+        }
+
+    });
 
 });
 
