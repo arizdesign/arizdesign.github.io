@@ -155,6 +155,38 @@ $(document).ready(function() {
 
     });
 
+
+	var container = $("main");
+    var projects = container.children(".project").toArray();
+
+    projects.sort(function() {
+        return Math.random() - 0.5;
+    });
+
+    $.each(projects, function(index, project) {
+        container.append(project);
+    });
+
+
+    $(".filter").on("click", function(e) {
+
+        e.preventDefault();
+
+        var filter = $(this).data("filter");
+
+        $(".filter").removeClass("active");
+        $(this).addClass("active");
+
+        if (filter === "all") {
+            $(".project").show();
+        } else {
+            $(".project").hide();
+            $(".project." + filter).show();
+        }
+
+    });
+	
+
 });
 
     </script>
