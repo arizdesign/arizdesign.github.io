@@ -32,11 +32,11 @@ main { width: 95%; display: grid; grid-template-columns: repeat(3, 1fr); }
 
 h1 { width: 95%; font-size: 16px; margin-top: 100px; margin-bottom: 50px; letter-spacing: .5px; }
 
-nav { width: 95%; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
-nav a { background-color: white; color: #000001; display: inline-block; padding: 2px 5px; border-radius: 50px; overflow: hidden; opacity: .8; }
+nav { width: 95%; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 40px; }
+nav a { background-color: white; color: #000001; display: inline-block; padding: 2px 10px; border-radius: 50px; overflow: hidden; opacity: .8; }
 nav a:hover { opacity: 1; }
 
-.project { display: block; width: auto; padding-top: 50px; text-align: left; font-size: 14px; }
+.project { display: block; width: auto; margin-top: 60px; text-align: left; font-size: 14px; }
 .project:hover { color: dodgerblue; }
 .project h2 { font-weight: bold; font-size: 30px; }
 .project h3 { text-transform: uppercase; letter-spacing: 1px; }
@@ -60,14 +60,15 @@ main { grid-template-columns: repeat(2, 1fr); }
 
 
 <nav class="filters">
-    <a href="#" class="filter active" data-filter="all">All Projects</a>
     <a href="#" class="filter" data-filter="design">Design</a>
     <a href="#" class="filter" data-filter="email">Email</a>
 	<a href="#" class="filter" data-filter="animation">Animation</a>
 	<a href="#" class="filter" data-filter="cinematography">Cinematography</a>
 	<a href="#" class="filter" data-filter="other">Other</a>
+	<a href="#" class="filter active" data-filter="all">All Projects</a>
 </nav>
 
+	
 	
 <main>
 	
