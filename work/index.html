@@ -161,72 +161,51 @@ footer h4 a:hover { color: dodgerblue; }
 	
 <footer><section>
 	<h3><a href="http://arizdesign.com"><b>Emmanuel Arizmendi</b> <br>Interactive Designer</a></h3>
-	<h4><a href="https://www.linkedin.com/in/arizdesign?trk=public_post_follow-view-profile">Find me on LinkendIn</a></h4>
+	<h4><a href="https://www.linkedin.com/in/arizdesign?trk=public_post_follow-view-profile" target="_blank">Find me on LinkendIn</a></h4>
 </section></footer>
 
 
-    <script>
+<script>
 $(document).ready(function() {
 
     $(".filter").on("click", function(e) {
-
         e.preventDefault();
-
         var filter = $(this).data("filter");
-
         $(".filter").removeClass("active");
-
         $(this).addClass("active");
-
         if (filter === "all") {
-
             $(".project").show();
-
         } else {
-
             $(".project").hide();
-
             $(".project." + filter).show();
-
         }
-
     });
 
 
 	var container = $("main");
     var projects = container.children(".project").toArray();
-
     projects.sort(function() {
         return Math.random() - 0.5;
     });
-
     $.each(projects, function(index, project) {
         container.append(project);
     });
-
-
     $(".filter").on("click", function(e) {
-
         e.preventDefault();
-
         var filter = $(this).data("filter");
-
         $(".filter").removeClass("active");
         $(this).addClass("active");
-
         if (filter === "all") {
             $(".project").show();
         } else {
             $(".project").hide();
             $(".project." + filter).show();
         }
-
     });
 	
 
 });
-
-    </script>
+</script>
 
 </body>
 
