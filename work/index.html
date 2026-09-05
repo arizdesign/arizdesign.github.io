@@ -27,7 +27,7 @@
 
 <style>
 
-body { background-image: url(images/arizdesign_work_bg.png); background-color: #1a1c20; color: white; font-family: Georgia, serif; }
+body { background-color: #1a1c20; color: white; font-family: Georgia, serif; }
 main { width: 95%; display: grid; grid-template-columns: repeat(3, 1fr); }
 .none { display: none; }
 
@@ -61,7 +61,7 @@ main { grid-template-columns: repeat(2, 1fr); }
 </head>
 
 
-<body>
+<body id="bg">
 
 <h1><a href="https://www.linkedin.com/in/arizdesign?trk=public_post_follow-view-profile"><b>Emmanuel Arizmendi</b> <br>Interactive Designer</a></h1>
 
@@ -211,6 +211,14 @@ $(document).ready(function() {
 
 });
 </script>
+
+<script>
+const v = Date.now();
+document.getElementById('bg').style.backgroundImage = `
+  url('images/arizdesign_work_bg.png?v=${v}')
+`;
+</script>
+	
 
 </body>
 
