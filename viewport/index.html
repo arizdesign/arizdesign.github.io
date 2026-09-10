@@ -55,8 +55,8 @@ main { font-size: 3.5vw; }
 function updateViewport() {
     const width = window.innerWidth;
 
-    document.getElementById('viewport').textContent =
-        '@media screen and (max-width: ' + width + 'px)';
+    document.getElementById('viewport').innerHTML =
+        '@media screen and (max-width: ' + <b>width</b> + '<b>px</b>)';
 
     let opacity;
 
