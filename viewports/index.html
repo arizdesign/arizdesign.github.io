@@ -45,6 +45,9 @@ body { background-color: #486FFF; background: radial-gradient(circle,rgba(72, 11
 
 
 <body>
+
+<section>Media Query width:</section>
+	
 <main id="viewport"></main>
 
 <footer><a href="http://arizdesign.com/">arizdesign.com</a></footer>
@@ -55,7 +58,7 @@ function updateViewport() {
     const width = window.innerWidth;
 
     document.getElementById('viewport').textContent =
-        width + 'px viewport';
+        '@media screen and (max-width: ' + width + 'px) {';
 
     let opacity;
 
