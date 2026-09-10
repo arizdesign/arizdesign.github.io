@@ -49,13 +49,25 @@ main::before { position: fixed; top: 50%; left: 50%; transform: translate(-50%, 
 
 <script>
 function updateViewport() {
-    document.getElementById("viewport").textContent =
-        window.innerWidth + "px viewport";
+    const width = window.innerWidth;
+
+    document.getElementById('viewport').textContent =
+        width + 'px viewport';
+
+    const opacity = Math.max(
+        0.1,
+        Math.min(
+            0.8,
+            0.1 + ((width - 300) / (480 - 300)) * 0.7
+        )
+    );
+
+    document.querySelector('main').style.backgroundColor =
+        `rgba(0,0,0,${opacity})`;
 }
 
+window.addEventListener('resize', updateViewport);
 updateViewport();
-
-window.addEventListener("resize", updateViewport);
 </script>
 
 </html>
