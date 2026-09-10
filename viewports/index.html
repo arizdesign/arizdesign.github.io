@@ -28,10 +28,22 @@
 <style>
 
 body { background-color: white; }
+body::before { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); color: black; padding: 20px; font-size: 32px; font-weight: bold; z-index: 9999; }
+
 
 	
+@media screen and (max-width: 1280px) {
+body { background-color: rgba(0,0,0,0.99); }
+body::before { content: "1064px"; }
+}
+
+@media screen and (max-width: 1080px) {
+body { background-color: rgba(0,0,0,0.99); }
+body::before { content: "1080px"; }
+}
+	
 @media screen and (max-width: 1064px) {
-body { background-color: orange; }
+body { background-color: rgba(0,0,0,0.99); }
 body::before { content: "1064px"; }
 }
 	
@@ -41,13 +53,18 @@ body::before { content: "768px"; }
 }
 	
 @media screen and (max-width: 480px) {
-body { background-color: red; }
+body { background-color: rgba(0,0,0,0.5); }
 body::before { content: "480px"; }
 }
 
 @media screen and (max-width: 390px) {
-body { background-color: yellow; }
+body { background-color: rgba(0,0,0,0.4); }
 body::before { content: "390px"; }
+}
+
+@media screen and (max-width: 320px) {
+body { background-color: rgba(0,0,0,0.3); }
+body::before { content: "320px"; }
 }
 
 	
