@@ -72,10 +72,15 @@ function updateViewport() {
 
     let opacity;
 
-    if (width > 480) {
+    if (width >= 1080) {
 
-        // 1280 -> 480
-        opacity = 0.1 + ((width - 480) / (1280 - 480)) * 0.7;
+        // Lock at 0.8
+        opacity = 0.8;
+
+    } else if (width > 480) {
+
+        // 1080 -> 480
+        opacity = 0.1 + ((width - 480) / (1080 - 480)) * 0.7;
 
     } else {
 
