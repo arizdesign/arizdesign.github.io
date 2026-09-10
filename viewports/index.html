@@ -32,18 +32,22 @@ body { background-color: white; }
 	
 @media screen and (max-width: 1064px) {
 body { background-color: orange; }
+body::before { content: "1064px"; }
 }
 	
 @media screen and (max-width: 768px) {
 body { background-color: green; }
+body::before { content: "768px"; }
 }
 	
 @media screen and (max-width: 480px) {
 body { background-color: red; }
+body::before { content: "480px"; }
 }
 
 @media screen and (max-width: 390px) {
 body { background-color: yellow; }
+body::before { content: "390px"; }
 }
 
 	
