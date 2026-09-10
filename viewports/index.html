@@ -66,16 +66,24 @@ function updateViewport() {
     document.getElementById('viewport').textContent =
         width + 'px viewport';
 
-    const opacity = Math.max(
-        0.1,
-        Math.min(
-            0.8,
-            0.1 + ((width - 300) / (480 - 300)) * 0.7
-        )
-    );
+    let opacity;
+
+    if (width > 480) {
+
+        // 1280 -> 480
+        opacity = 0.1 + ((width - 480) / (1280 - 480)) * 0.7;
+
+    } else {
+
+        // 480 -> 0
+        opacity = 0.1 + (width / 480) * 0.7;
+
+    }
+
+    opacity = Math.max(0.1, Math.min(0.8, opacity));
 
     document.querySelector('main').style.backgroundColor =
-        `rgba(0,0,0,${opacity})`;
+        `rgba(0,0,0,${opacity.toFixed(3)})`;
 }
 
 window.addEventListener('resize', updateViewport);
