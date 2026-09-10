@@ -27,40 +27,23 @@
 
 <style>
 
-body { background-color: #1a1c20; color: white; font-family: Georgia, serif; background-size: 100% auto; background-repeat: repeat; background-position: center top; }
-main { width: 95%; display: grid; grid-template-columns: repeat(3, 1fr); }
-.none { display: none; }
+body { background-color: white; }
 
-h1 { width: 95%; font-size: 30px; margin-top: 100px; margin-bottom: 50px; letter-spacing: .5px; }
-
-nav { width: 95%; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 40px; color: black; }
-nav a { background-color: white; display: inline-block; padding: 2px 10px; border-radius: 50px; overflow: hidden; opacity: .7; }
-nav a:hover { opacity: 1; background-color: dodgerblue; color: white; }
-
-.project { display: block; width: auto; margin-top: 80px; padding-right: 7%; text-align: left; font-size: 14px; letter-spacing: .5px; }
-.project:hover { color: dodgerblue; }
-.project h2 { font-weight: bold; font-size: 30px; padding-bottom: 5px; }
-.project h3 { text-transform: uppercase; letter-spacing: 1px; }
-
-footer { border-top: 1px solid white; color: white; font-size: 14px; letter-spacing: .5px; margin-top: 100px; width: 95%; }
-footer section { padding: 50px 0px; }
-footer h3 { margin-bottom: 20px; }
-footer h4 { margin-top: 20px; }
-footer h4 a { text-decoration: underline !important; }
-footer h4 a:hover { color: dodgerblue; }
 	
-
-@media only screen and (max-width: 480px) {
-h1, nav, main, footer { width: 90%; }
-nav { color: dodgerblue; margin-bottom: 0px; }
-nav a { opacity: 1; }
-.project { margin-top: 50px; }
-.project h3 { font-size: 13px; }
-h1, .project h2 { font-size: 18px; }
-}	
-
+@media only screen and (max-width: 1064px) {
+body { background-color: green; }
+}
+	
 @media only screen and (max-width: 768px) {
-main { grid-template-columns: repeat(2, 1fr); }
+body { background-color: green; }
+}
+	
+@media only screen and (max-width: 480px) {
+body { background-color: red; }
+}
+
+@media only screen and (max-width: 390px) {
+body { background-color: red; }
 }
 
 	
@@ -69,155 +52,8 @@ main { grid-template-columns: repeat(2, 1fr); }
 </head>
 
 
-<body id="bg">
+<body class="viewport">
 
-<h1><a href="https://www.linkedin.com/in/arizdesign?trk=public_post_follow-view-profile"><b>Emmanuel Arizmendi</b> <br>Interactive Designer</a></h1>
-
-
-<nav class="filters">
-    <a href="" class="filter" data-filter="design">Design</a>
-    <a href="" class="filter" data-filter="email">Email</a>
-	<a href="" class="filter" data-filter="animation">Animation</a>
-	<a href="" class="filter" data-filter="photography">Photography</a>
-	<a href="" class="filter" data-filter="cinematography">Cinematography</a>
-	<a href="" class="filter" data-filter="pokemon">Pok&eacute;mon</a>
-	<a href="" class="filter" data-filter="other">Other</a>
-	<a href="" class="filter active" data-filter="all">All Work</a>
-</nav>
-
-	
-	
-<main>
-	
-<a class="project design" href="https://www.linkedin.com/posts/arizdesign_arizdesign-activity-7494993161409155073-h3eg?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Athletes for Cancer</h3> <h2>Kiteboarding 4 Cancer</h2> Poster</section></a>
-
-<a class="project email" href="https://www.linkedin.com/posts/arizdesign_email-arizcodesemail-emailgeek-activity-7111480306490101760-MHzm?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Airbnb</h3> <h2>Award Winning Email</h2> Email Development</section></a>
-
-<a class="project design" href="https://www.linkedin.com/posts/arizdesign_looking-through-older-work-i-forgot-one-activity-7127485345520136192-uZ7p?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Happy Valley, OR</h3> <h2>Happy Valley</h2> Branding</section></a>
-
-<a class="project email" href="https://www.linkedin.com/posts/arizdesign_email-arizcodesemail-arizdesign-share-7188627299167096832-6LUF/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>United States Post&nbsp;Office</h3> <h2>Change of Address</h2> Email development</section></a>
-
-<a class="project email animation" href="https://www.linkedin.com/posts/arizdesign_email-arizcodesemail-emailgeeks-activity-7134264305813786624-f6Dd?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Airbnb</h3> <h2>Thank You</h2> Email development</section></a>
-
-<a class="project email animation" href="https://www.linkedin.com/posts/arizdesign_arizcodesemail-activity-7085435577797373952-OleL?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>AARP</h3> <h2>Movies for Grownups</h2> Email development</section></a>
-
-<a class="project design animation" href="https://www.linkedin.com/posts/arizdesign_s550ponyta-arizdesign-share-7282967583677468673-b80z/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Personal</h3> <h2>Ponyta</h2> Design</section></a>
-
-<a class="project cinematography" href="https://www.linkedin.com/posts/arizdesign_arizpokedex-activity-7384629313540780032-nDZH?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Personal</h3> <h2>Welcome to Lumiose&nbsp;City</h2> Cinematography</section></a>
-	
-<a class="project design" href="https://www.linkedin.com/posts/arizdesign_email-arizcodesemail-emailgeeks-activity-7294765633894764545-RnUC?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Personal</h3> <h2>2025 Valentines Day</h2> Pun cards</section></a>
-
-<a class="project cinematography" href="https://www.linkedin.com/posts/arizdesign_for-our-4th-wedding-anniversary-we-traveled-activity-7236438650564042752-BPtm?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Personal</h3> <h2>Victoria Butterfly Gardens</h2> Cinematography</section></a>
-
-<a class="project design animation" href="https://www.instagram.com/reel/CiIvSDPDiQv/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==" target="_blank"><section><h3>Personal</h3> <h2>Fuecoco Adventures</h2> Typography</section></a>
-
-<a class="project design animation" href="https://www.linkedin.com/posts/arizdesign_arizdesign-activity-7175374562770006016-OMlC?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Personal</h3> <h2>Hotel California</h2> Typography</section></a>
-
-<a class="project design animation" href="https://www.linkedin.com/posts/arizdesign_arizdesign-activity-7163771178375954432-7lRu?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Personal</h3> <h2>Chi-wowsa</h2> Typography</section></a>
-
-<a class="project design animation" href="https://www.linkedin.com/posts/arizdesign_from-the-archives-activity-7160744168489705472-rJmx?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Personal</h3> <h2>Mewtwo birthday</h2> Animation</section></a>
-
-<a class="project cinematography" href="https://www.linkedin.com/posts/arizdesign_arizpokedex-activity-7146987145159671808-jvhM?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Personal</h3> <h2>2023 Favorite Pok&eacute;mon figures</h2> Cinematography</section></a>
-
-<a class="project design" href="https://www.linkedin.com/posts/arizdesign_christmas-activity-7092320350104932352--3RT?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Personal</h3> <h2>2015 Christmas cards</h2> Greeting cards</section></a>
-
-<a class="project design animation" href="https://www.linkedin.com/posts/arizdesign_santa-piplup-wishes-you-a-happy-holidays-activity-6882445930948370432-7h-8?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Personal</h3> <h2>2021 Merry Christmas</h2> Typography</section></a>
-
-<a class="project photography" href="https://www.instagram.com/p/DFywo_iNE3l/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==" target="_blank"><section><h3>Personal</h3> <h2>Gimmighoul</h2> Toy photography</section></a>
-
-<a class="project photography" href="https://www.instagram.com/p/C38TPa-uOZ0/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==" target="_blank"><section><h3>Personal</h3> <h2>Mega Venusaur</h2> Toy photography</section></a>
-
-<a class="project photography" href="https://www.instagram.com/p/CvyQ9uFpH2F/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==" target="_blank"><section><h3>Personal</h3> <h2>Shellder</h2> Toy photography</section></a>
-
-<a class="project photography" href="https://www.instagram.com/p/Cd3Wd4FuhXc/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==" target="_blank"><section><h3>Personal</h3> <h2>Detective Pikachu</h2> Toy photography</section></a>
-
-<a class="project photography" href="https://www.instagram.com/reel/CxGZTcUR_3f/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==" target="_blank"><section><h3>Personal</h3> <h2>POK&Eacute;MON &times; KOGEI</h2> Photography</section></a>
-
-<a class="project cinematography" href="https://www.instagram.com/reel/CjbImqED7Ht/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==" target="_blank"><section><h3>Personal</h3> <h2>Girafarig</h2> Cinematography</section></a>
-
-<a class="project cinematography" href="https://www.instagram.com/reel/Cgb2pqIjulD/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==" target="_blank"><section><h3>Personal</h3> <h2>Bryce Canyon, UT</h2> Cinematography</section></a>
-
-<a class="project cinematography" href="https://www.instagram.com/reel/CSAHZ1HJ0dz/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==" target="_blank"><section><h3>Personal</h3> <h2>Yellowstone</h2> Cinematography</section></a>
-
-
-
-	
-<a class="project pokemon other" href="https://www.instagram.com/reel/C9vZWV_RWCW/" target="_blank"><section><h3>Pok&eacute;mon</h3><h2>Pikachu with the Mightiest&nbsp;Mark</h2> Puppetry</section></a>
-
-<a class="project email animation pokemon" href="https://www.linkedin.com/posts/arizdesign_email-arizcodesemail-emailgeeks-activity-7136466559912341504-d-ts?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Pok&eacute;mon</h3> <h2>Holiday Gift Guide</h2> Email Development</section></a>
-
-<a class="none project email animation pokemon" href="https://www.linkedin.com/posts/arizdesign_email-emails-arizcodesemail-activity-7131776818881200128-gZn6?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Pok&eacute;mon</h3> <h2><i>Pok&eacute;mon Scarlet&nbsp;&amp; Violet</i> launch</h2> Email Development</section></a>
-
-<a class="none project other pokemon" href="https://www.linkedin.com/posts/arizdesign_go-check-out-my-debut-as-a-team-rocket-grunt-activity-7122317615108169729-kWQz?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Pok&eacute;mon</h3> <h2>Team Rocket Grunt</h2> Modeling</section></a>
-
-<a class="none project design email pokemon" href="https://www.linkedin.com/posts/arizdesign_email-arizcodesemail-emailgeek-activity-7103185639201804288-aqau?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Pok&eacute;mon</h3> <h2>Get Mew &amp; Mewtwo!</h2> Email development</section></a>
-
-<a class="none project email animation pokemon" href="https://www.linkedin.com/posts/arizdesign_email-arizcodesemail-arizdesign-activity-7444260972120150016-HKXv?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Pok&eacute;mon</h3> <h2>How many Spewpa?</h2> Email development</section></a>
-
-<a class="none project email animation pokemon" href="https://www.linkedin.com/posts/arizdesign_email-arizcodesemail-arizdesign-activity-7372293115812134912-wGPq?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Pok&eacute;mon</h3> <h2><i>Pokemon Legends: Z-A</i> DLC ASMR</h2> Email development</section></a>
-
-<a class="none project email animation pokemon" href="https://www.linkedin.com/posts/arizdesign_email-arizcodesemail-arizdesign-activity-7372293115812134912-wGPq?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Pok&eacute;mon</h3> <h2>Shiny Rayquaza Appears ASMR</h2> Email development</section></a>
-
-<a class="none project email design pokemon" href="https://www.linkedin.com/posts/arizdesign_email-arizcodesemail-emailgeeks-activity-7182408016317591552-dLGn?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAom6rsBn71INSah-TnUdu1zyatQbnO3k7s" target="_blank"><section><h3>Pok&eacute;mon</h3> <h2><i>Pok&eacute;mon: Path&nbsp;to the&nbsp;Peak</i></h2> Email development</section></a>
-
-
-</main>
-	
-<footer><section>
-	<h3><a href="http://arizdesign.com"><b>Emmanuel Arizmendi</b> <br>Interactive Designer</a></h3>
-	<h4><a href="https://www.linkedin.com/in/arizdesign?trk=public_post_follow-view-profile" target="_blank">Find me on LinkendIn</a></h4>
-</section></footer>
-
-
-<script>
-$(document).ready(function() {
-
-    $(".filter").on("click", function(e) {
-        e.preventDefault();
-        var filter = $(this).data("filter");
-        $(".filter").removeClass("active");
-        $(this).addClass("active");
-        if (filter === "all") {
-            $(".project").show();
-        } else {
-            $(".project").hide();
-            $(".project." + filter).show();
-        }
-    });
-
-
-	var container = $("main");
-    var projects = container.children(".project").toArray();
-    projects.sort(function() {
-        return Math.random() - 0.5;
-    });
-    $.each(projects, function(index, project) {
-        container.append(project);
-    });
-    $(".filter").on("click", function(e) {
-        e.preventDefault();
-        var filter = $(this).data("filter");
-        $(".filter").removeClass("active");
-        $(this).addClass("active");
-        if (filter === "all") {
-            $(".project").show();
-        } else {
-            $(".project").hide();
-            $(".project." + filter).show();
-        }
-    });
-	
-
-});
-</script>
-
-<script>
-const v = Date.now();
-document.getElementById('bg').style.backgroundImage = `
-  url('images/arizdesign_work_bg.png?v=${v}')
-`;
-</script>
-	
 
 </body>
 
